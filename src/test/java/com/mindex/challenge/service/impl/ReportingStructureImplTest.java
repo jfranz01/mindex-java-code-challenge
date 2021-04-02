@@ -1,8 +1,6 @@
 package com.mindex.challenge.service.impl;
 
-import com.mindex.challenge.data.Employee;
 import com.mindex.challenge.data.ReportingStructure;
-import com.mindex.challenge.service.EmployeeService;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -10,30 +8,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.web.server.LocalServerPort;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class ReportingStructureImplTest 
 {
 
-    private String employeeUrl;
-    private String employeeIdUrl;
     private String reportingStructureIdUrl;
-
-    @Autowired
-    private EmployeeService employeeService;
 
     @LocalServerPort
     private int port;
@@ -44,8 +30,6 @@ public class ReportingStructureImplTest
     @Before
     public void setup() 
     {
-        employeeUrl             = "http://localhost:" + port + "/employee";
-        employeeIdUrl           = "http://localhost:" + port + "/employee/{id}";
     	reportingStructureIdUrl = "http://localhost:" + port + "/reportingstructure/{id}";
     }
 
